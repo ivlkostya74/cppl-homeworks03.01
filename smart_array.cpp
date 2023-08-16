@@ -17,10 +17,11 @@ int smart_array::add_element(int i) {
 			throw ArrayException(message.str());
 		}
 		*(it+now_size)=i;
+		++now_size;
 			
 }
 int smart_array::get_element(int i) {
-	if (i >  now_size)
+	if ((i > now_size)||(i<1))
 	{
 		std::stringstream message;
 		message << "Недопустимый индекс при обращении к элементу массива!\n";
